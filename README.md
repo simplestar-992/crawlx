@@ -1,74 +1,74 @@
-# CRAWLX
+# CrawlX | Fast Web Crawler
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Scraping-Web%20Crawler-F39C12?style=for-the-badge" alt=""/>
+  <img src="https://img.shields.io/badge/Go-1.21+-00ADD8?style=for-the-badge&logo=go" alt=""/>
+</p>
+
+---
+
+### High-performance web crawling & scraping
+
+CrawlX extracts links, pages, and structured data from websites at blazing speed.
+
+```bash
+crawlx https://example.com -depth 3 -workers 10
 ```
-✨ crawlx ✨
-╔══════════════════╗
-║   CRAWLX       ║
-╚══════════════════╝
-```
 
-> A powerful tool built for modern developers
+---
 
-## ✨ Features
+## Features
 
-- 🚀 Blazing fast performance
-- 💎 Clean and intuitive API
-- 🔧 Zero configuration needed
-- 🛡️ Secure by default
-- 📦 Single binary, no dependencies
+- 🚀 **Concurrent crawling** - Multiple workers, fast results
+- 🎯 **Depth control** - Limit how deep to crawl
+- 🔗 **Link extraction** - Find all links on a page
+- 📄 **Content extraction** - Pull title, text, images
+- 📊 **Sitemap generation** - Create sitemaps automatically
+- 📝 **Export** - JSON, CSV, or plain text
 
-## 📥 Installation
+---
+
+## Installation
 
 ```bash
 git clone https://github.com/simplestar-992/crawlx.git
 cd crawlx
-go build -o crawlx .
-./crawlx --help
+go build -o crawlx -ldflags="-s -w"
 ```
-
-## 🚀 Quick Start
-
-```bash
-./crawlx -h
-```
-
-## 🧪 Examples
-
-```bash
-# Example 1
-./crawlx status
-
-# Example 2  
-./crawlx --verbose
-
-# Example 3
-./crawlx help
-```
-
-## 📊 Project Info
-
-| Property | Value |
-|----------|-------|
-| Language | Go 🟢 |
-| Status | Active |
-| License | MIT |
-
-## 🤝 Contributing
-
-Contributions welcome! Open an issue or PR.
-
-## 📄 License
-
-MIT © **simplestar-992**
 
 ---
 
-<p align="center">
-  <img src="https://img.shields.io/badge/crawlx-red-red?style=for-the-badge" alt=""/>
-  <img src="https://img.shields.io/github/v/tag/simplestar-992/crawlx?style=for-the-badge" alt=""/>
-  <img src="https://img.shields.io/github/license/simplestar-992/crawlx?style=for-the-badge" alt=""/>
-</p>
+## Usage
 
-<p align="center">
-  Built with ❤️ by <a href="https://github.com/simplestar-992">simplestar-992</a>
-</p>
+```bash
+# Basic crawl
+crawlx https://example.com
+
+# Custom depth and workers
+crawlx https://example.com -depth 5 -workers 20
+
+# Extract specific content
+crawlx https://blog.example.com -extract "article-title,article-body"
+
+# Output formats
+crawlx https://example.com -format json -o results.json
+```
+
+---
+
+## Examples
+
+```bash
+# Site audit
+crawlx https://example.com -depth 2 | grep -i "login\|admin"
+
+# Find all external links
+crawlx https://example.com -extract links | grep "^http"
+
+# Generate sitemap
+crawlx https://example.com -sitemap -o sitemap.xml
+```
+
+---
+
+MIT © 2024 [simplestar-992](https://github.com/simplestar-992)
